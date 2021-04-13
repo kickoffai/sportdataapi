@@ -22,11 +22,11 @@ class SoccerClient:
         
     def get_match(self, match_id):
         """Get match details."""
-        return self._get(f"matches/{match_id}")["data"]
+        return self._get("matches/{}".format(match_id))["data"]
 
     def get_odds(self, match_id, type):
         """Get bookmakers' odds for a match."""
-        return self._get(f"odds/{match_id}", type=type)["data"]
+        return self._get("odds/{}".format(match_id), type=type)["data"]
 
     def get_status(self):
         """Get account status."""
